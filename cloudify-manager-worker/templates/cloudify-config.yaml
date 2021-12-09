@@ -30,7 +30,7 @@ data:
             default: {{ .Values.queue.host }}.{{.Release.Namespace}}.svc.cluster.local
 
     postgresql_client:
-      host: {{ .Values.db.host }}.{{.Release.Namespace}}.svc.cluster.local
+      host: {{ .Values.db.host }}
       server_db_name: {{ .Values.db.serverDBName }}
       server_username: {{ .Values.db.serverUsername }}
       server_password: {{ .Values.db.serverPassword }}
