@@ -37,7 +37,7 @@ data:
       cloudify_db_name: {{ .Values.db.cloudifyDBName }}
       cloudify_username: {{ .Values.db.cloudifyUsername }}
       cloudify_password: {{ .Values.db.cloudifyPassword }}
-      ca_path: {{ .Values.config.caCertPath }}
+      ca_path: {{ .Values.db.ca_path }}
       ssl_enabled: true
       ssl_client_verification: true
     postgresql_server:
