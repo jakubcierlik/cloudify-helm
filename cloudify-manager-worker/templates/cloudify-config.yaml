@@ -38,8 +38,8 @@ data:
       cloudify_username: {{ .Values.db.cloudifyUsername }}
       cloudify_password: {{ .Values.db.cloudifyPassword }}
       ca_path: {{ .Values.db.ca_path }}
-      ssl_enabled: true
-      ssl_client_verification: true
+      ssl_enabled: {{ .Values.db.ssl_enabled }}
+      ssl_client_verification: {{ .Values.db.ssl_client_verification }}
     postgresql_server:
       postgres_password: {{ .Values.db.serverPassword }}
       ca_path: {{ .Values.config.caCertPath }}
