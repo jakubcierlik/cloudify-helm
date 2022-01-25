@@ -104,6 +104,10 @@ readinessProbe:
   successThreshold: 3
   initialDelaySeconds: 10
 
+serviceAccount: {}
+  # name: cluster-sa
+  # roleArn: IAM-role-ARN
+
 ingress:
   enabled: false
   host: cfy-efs-app.eks.cloudify.co

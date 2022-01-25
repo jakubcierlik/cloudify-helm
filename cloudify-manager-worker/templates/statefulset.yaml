@@ -1,3 +1,13 @@
+{{- if .Values.serviceAccount }}
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+ name: {{ .Values.serviceAccount.name }}
+ namespace: {{.Release.Namespace}}
+ annotations:
+   eks.amazonaws.com/role-arn: {{ .Values.serviceAccount.roleArn }}
+---
+{{- end }}
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -16,6 +26,9 @@ spec:
       labels:
         app: {{ template "cloudify-manager-worker.name" . }}
     spec:
+      {{- if .Values.serviceAccount }}
+      serviceAccountName: {{ .Values.serviceAccount.name }}
+      {{- end }}
       initContainers:
       - name: init-data
         image: {{ .Values.image.initContainer.repository }}:{{ .Values.image.initContainer.tag }}

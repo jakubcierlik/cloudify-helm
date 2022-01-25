@@ -341,6 +341,16 @@ config:
   caCertPath: /mnt/cloudify-data/ssl/ca.crt
 ```
 
+### ServiceAccount
+
+You can create a specific Service Account to be used by cluster pods if you have IAM role prepared.
+
+```yaml
+serviceAccount:
+  name: cluster-sa
+  roleArn: IAM-role-ARN
+```
+
 ### Ingress
 
 You may enable ingress-nginx and generate automatically cert if you have ingress-nginx / cert-manager installed.
